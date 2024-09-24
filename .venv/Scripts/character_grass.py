@@ -32,10 +32,6 @@ def run_rectangle():
     run_left()
     run_bottom()
     run_right(250)
-
-
-
-    print('rectangle')
     delay(0.5)
 def run_circle():
     r, cx = 300, 800//2
@@ -45,6 +41,7 @@ def run_circle():
         dx=cos(radians(i))*r
         dy=sin(radians(i))*r
         draw_g_b(cx+dx,cy+dy)
+    delay(0.5)
 
 def run_climb1():
     max_y=300*tan(radians(60))
@@ -69,14 +66,16 @@ def run_triangle():
     climb1_y = run_climb1()
     run_climb2(climb1_y)
     run_right(250)
+    delay(0.5)
 
 
 
 while True:
 
-    #run_rectangle()
+    run_rectangle()
 
-    #run_circle()
+    run_circle()
 
     run_triangle()
+    break
 close_canvas()
