@@ -4,23 +4,35 @@ open_canvas(800, 800)
 grass = load_image('grass.png')
 character = load_image('character.png')
 
+
+def draw_g_b(x,y):
+    clear_canvas_now()
+    grass.draw_now(400, 30)
+    character.draw_now(x, y)
+    delay(0.01)
 def run_top():
-    pass
+    for dy in range(0, 600, 10):
+        draw_g_b(0, dy)
 def run_right():
-    pass
+    for dx in range(0, 800, 10):
+        draw_g_b(dx, 600)
 def run_bottom():
-    pass
+    for dy in range(600, 0, -10):
+        draw_g_b(800, dy)
 def run_left():
-    pass
+    for dx in range(800, 0, -10):
+        draw_g_b(dx, 0)
 
 
 
 def run_rectangle():
-    clear_canvas_now()
+
     run_right()
-    run_top()
     run_bottom()
     run_left()
+    run_top()
+
+
 
 
     print('rectangle')
@@ -30,13 +42,9 @@ def run_circle():
     cy = r + 90
     for i in range(270, 630):
 
-        clear_canvas()
-        grass.draw_now(400, 30)
         dx=cos(radians(i))*r
         dy=sin(radians(i))*r
-        character.draw_now(cx+ dx, cy+dy)
-        update_canvas()
-        delay(0.01)
+        draw_g_b(cx+dx,cy+dy)
 
 
 
@@ -51,6 +59,6 @@ while True:
 
     run_rectangle()
 
-    #run_circle()
+    run_circle()
 
 close_canvas()
