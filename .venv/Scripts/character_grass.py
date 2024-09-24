@@ -9,15 +9,15 @@ def run_rectangle():
     print('rectangle')
     delay(0.5)
 def run_circle():
-    dx=0
-    dy=0
+    r, cx = 300, 800//2
+    cy = r + 90
     for i in range(270, 630):
 
         clear_canvas()
         grass.draw_now(400, 30)
-        dx=cos(radians(i))*300
-        dy=sin(radians(i))*300
-        character.draw_now(400+ dx, 390+dy)
+        dx=cos(radians(i))*r
+        dy=sin(radians(i))*r
+        character.draw_now(cx+ dx, cy+dy)
         update_canvas()
         delay(0.01)
 
