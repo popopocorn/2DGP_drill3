@@ -11,27 +11,27 @@ def draw_g_b(x,y):
     character.draw_now(x, y)
     delay(0.01)
 def run_top():
-    for dy in range(0, 600, 10):
-        draw_g_b(0, dy)
-def run_right():
-    for dx in range(0, 800, 10):
-        draw_g_b(dx, 600)
+    for dy in range(90, 390, 2):
+        draw_g_b(550, dy)
+def run_right(cur_x):
+    for dx in range(0, 150, 2):
+        draw_g_b(dx + cur_x, 90)
 def run_bottom():
-    for dy in range(600, 0, -10):
-        draw_g_b(800, dy)
+    for dy in range(390, 90, -2):
+        draw_g_b(250, dy)
 def run_left():
-    for dx in range(800, 0, -10):
-        draw_g_b(dx, 0)
+    for dx in range(550, 250, -2):
+        draw_g_b(dx, 390)
 
 
 
 def run_rectangle():
 
-    run_right()
-    run_bottom()
-    run_left()
+    run_right(400)
     run_top()
-
+    run_left()
+    run_bottom()
+    run_right(250)
 
 
 
@@ -47,11 +47,11 @@ def run_circle():
         draw_g_b(cx+dx,cy+dy)
 
 
-
-
-
-    pass
-
+def run_triangle():
+    run_right(400)
+    run_climb1()
+    run_climb2()
+    run_right(250)
 
 
 
@@ -61,4 +61,5 @@ while True:
 
     run_circle()
 
+    run_triangle()
 close_canvas()
