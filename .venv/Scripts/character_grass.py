@@ -17,5 +17,5 @@ while True:
     run_rectangle()
 
     run_circle()
-    
+
 close_canvas()
