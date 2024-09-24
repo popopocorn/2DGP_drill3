@@ -4,8 +4,25 @@ open_canvas(800, 800)
 grass = load_image('grass.png')
 character = load_image('character.png')
 
+def run_top():
+    pass
+def run_right():
+    pass
+def run_bottom():
+    pass
+def run_left():
+    pass
+
+
+
 def run_rectangle():
     clear_canvas_now()
+    run_top()
+    run_right()
+    run_bottom()
+    run_left()
+
+
     print('rectangle')
     delay(0.5)
 def run_circle():
@@ -35,5 +52,5 @@ while True:
     run_rectangle()
 
     run_circle()
-    a=input('press enter to continue')
+
 close_canvas()
