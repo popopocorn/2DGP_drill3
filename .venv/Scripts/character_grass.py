@@ -17,8 +17,8 @@ def run_left():
 
 def run_rectangle():
     clear_canvas_now()
-    run_top()
     run_right()
+    run_top()
     run_bottom()
     run_left()
 
@@ -51,6 +51,6 @@ while True:
 
     run_rectangle()
 
-    run_circle()
+    #run_circle()
 
 close_canvas()
