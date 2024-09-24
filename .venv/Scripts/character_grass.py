@@ -47,22 +47,27 @@ def run_circle():
         draw_g_b(cx+dx,cy+dy)
 
 def run_climb1():
-    max_y=300*tan(radians(45))
+    max_y=300*tan(radians(60))
     dx=550
     dy=90
-    while dx>400 and dy<90+max_y:
+    while dx>=400 and dy<=90+max_y:
         draw_g_b(dx, dy)
-        dx-=2
-        dy+=2*tan(radians(45))
+        dx-=1
+        dy+=tan(radians(60))
+    return dy
 
-def run_climb2():
-    pass
+def run_climb2(dy):
+    dx = 400
+    while dx >= 250 and dy >= 90:
+        draw_g_b(dx, dy)
+        dx -= 1
+        dy -= tan(radians(60))
 
 
 def run_triangle():
     run_right(400)
-    run_climb1()
-    run_climb2()
+    climb1_y = run_climb1()
+    run_climb2(climb1_y)
     run_right(250)
 
 
